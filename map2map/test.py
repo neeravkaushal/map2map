@@ -42,7 +42,7 @@ def test(args):
         num_workers=args.loader_workers,
     )
 
-    in_chan, out_chan = test_dataset.in_chan, test_dataset.tgt_chan
+    in_chan, out_chan = test_dataset.in_chan[:1], test_dataset.tgt_chan
 
     model = import_attr(args.model, models, callback_at=args.callback_at)
     model = model(sum(in_chan), sum(out_chan), scale_factor=args.scale_factor,
