@@ -212,7 +212,7 @@ def int_tuple(s):
 
 
 def set_common_args(args):
-    pass
+    args.load_state = os.path.realpath(args.load_state)
 
 
 def set_train_args(args):
